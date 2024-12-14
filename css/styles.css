@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  border: 1px solid red;
+  height: 100vh;
+}
+.nav-side-left {
+  border: 1px solid blue;
+  width: 60vw;
+  height: 100vh;
+  position: relative;
+}
+.nav-control {
+  position: relative;
+  left: 60vw;
+}
+.nav-out-js {
+  right: 60vw;
+}
+.nav-in-js {
+  right: 0vw;
+}
