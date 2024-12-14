@@ -1,24 +1,117 @@
+:root {
+  --main-dark: #0c0a0a;
+  --main-grey: #191616;
+  --alt-grey: #5d5a5a;
+  --main-red: #ae6060;
+  --alt-red: #ac6d6d;
+  --main-red-trans: #ae606080;
+  --alt-red-trans: #ac6d6d80;
+  --main-blue: #6484e3;
+
+  --text-light: #ebeaea;
+  --text-grey: #b6b6b6;
+}
 * {
   padding: 0;
   margin: 0;
+  color: var(--text-grey);
+  font-family: sans-serif;
 }
+body {
+  background-color: var(--main-dark);
+}
+/* COLORS */
+.grey-red-gradient {
+  background: var(--main-grey);
+  background: linear-gradient(
+    90deg,
+    var(--main-grey) 0%,
+    var(--main-red-trans) 300%
+  );
+}
+.red-grey-gradient {
+  transition: background-position 0.5s ease-out;
+  background: linear-gradient(
+    45deg,
+    var(--main-red-trans) 0%,
+    var(--main-grey) 25%
+  );
+  background-size: 300%; /* Ensure enough room for background movement */
+  background-position: 20% 0%;
+}
+
+.red-grey-gradient:hover {
+  background-position: 0% 0%; /* Adjust to create the illusion of a gradient shift */
+}
+
+/* STRUCTURE */
 .container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 100vh;
+
+  background-color: var(--main-dark);
+}
+.grid-container {
+  display: grid;
+  row-gap: 30px;
+
+  height: 60%;
 }
 .nav-side-left {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 60vw;
   height: 100vh;
   position: relative;
+
+  background-color: var(--main-grey);
+
+  transition: all 0.3s ease-out;
 }
 .nav-control {
   position: relative;
-  left: 60vw;
+  left: 58vw;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  padding-left: 10px;
+  right: 10px;
+  vertical-align: middle;
+  line-height: 40px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bolder;
 }
 .nav-out-js {
   right: 60vw;
 }
 .nav-in-js {
   right: 0vw;
+}
+
+.nav-object {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px 0 15px;
+  border-radius: 12px;
+  font-size: 30px;
+}
+
+.nav-active {
+  color: var(--main-red);
+
+  -webkit-animation: glowred 3s ease-in-out infinite alternate;
+  -moz-animation: glowred 3s ease-in-out infinite alternate;
+  animation: glowred 3s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glowred {
+  from {
+    text-shadow: none;
+  }
+
+  to {
+    text-shadow: 0 0 2px var(--main-red-trans), 0 0 3px var(--main-red-trans),
+      0 0 4px var(--main-red-trans), 0 0 5px var(--main-red-trans),
+      0 0 5px var(--main-red-trans);
+  }
 }
