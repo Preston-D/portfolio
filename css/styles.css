@@ -7,9 +7,11 @@
   --main-red-trans: #ae606080;
   --alt-red-trans: #ac6d6d80;
   --main-blue: #6484e3;
+  --main-blue-trans: #6484e380;
 
   --text-light: #ebeaea;
   --text-grey: #b6b6b6;
+  --text-grey-trans: #b6b6b680;
 }
 * {
   padding: 0;
@@ -89,6 +91,7 @@ body {
 }
 
 .nav-object {
+  opacity: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,13 +99,16 @@ body {
   border-radius: 12px;
   font-size: 30px;
 }
+.nav-object:hover {
+  opacity: 1;
+}
 
 .nav-active {
-  color: var(--main-red);
+  color: var(--text-grey);
 
-  -webkit-animation: glowred 3s ease-in-out infinite alternate;
-  -moz-animation: glowred 3s ease-in-out infinite alternate;
-  animation: glowred 3s ease-in-out infinite alternate;
+  -webkit-animation: glowblue 3s ease-in-out infinite alternate;
+  -moz-animation: glowblue 3s ease-in-out infinite alternate;
+  animation: glowblue 3s ease-in-out infinite alternate;
 }
 @-webkit-keyframes glowred {
   from {
@@ -114,4 +120,33 @@ body {
       0 0 4px var(--main-red-trans), 0 0 5px var(--main-red-trans),
       0 0 5px var(--main-red-trans);
   }
+}
+@-webkit-keyframes glowblue {
+  from {
+    text-shadow: none;
+  }
+
+  to {
+    text-shadow: 0 0 2px var(--main-blue-trans), 0 0 3px var(--main-blue-trans),
+      0 0 4px var(--main-blue-trans), 0 0 5px var(--main-blue-trans),
+      0 0 5px var(--main-blue-trans);
+  }
+}
+@-webkit-keyframes glowgrey {
+  from {
+    text-shadow: none;
+  }
+
+  to {
+    text-shadow: 0 0 2px var(--text-grey-trans), 0 0 3px var(--text-grey-trans),
+      0 0 4px var(--text-grey-trans), 0 0 5px var(--text-grey-trans),
+      0 0 5px var(--text-grey-trans);
+  }
+}
+
+.nav-copy {
+  font-size: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
 }
