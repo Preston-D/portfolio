@@ -3,15 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Preston Duffield's Portfolio</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="container">
+      <!-- NAV -->
       <nav class="nav-side-left nav-out-js">
         <div class="nav-control grey-red-gradient" onclick="moveNav()">></div>
         <div class="grid-container">
-          <div class="nav-object red-grey-gradient nav-active">Home</div>
+          <div class="nav-object red-grey-gradient nav-active">
+            <a href="./index.html">Home</a>
+          </div>
           <div class="nav-object red-grey-gradient">Resume</div>
           <div class="nav-object red-grey-gradient">Projects</div>
           <div class="nav-object red-grey-gradient">About</div>
@@ -19,6 +22,60 @@
         </div>
         <div class="nav-copy">&copy; Preston Duffield 2024</div>
       </nav>
+      <!-- MAIN BODY -->
+      <div class="main-body">
+        <h1 class="title">Home</h1>
+
+        <section class="cards-2-col">
+          <div class="card red-grey-gradient">
+            <div class="card-image-container">
+              <img src="./images/tree.jpeg" />
+            </div>
+            <div class="card-content">
+              <p class="card-title text--medium">
+                Here's the Title of an Awesome Course
+              </p>
+              <div class="card-info">
+                <p class="text--medium">30 Min</p>
+                <p class="card-price text--medium">Free</p>
+              </div>
+            </div>
+          </div>
+          <!--End of card 1-->
+
+          <div class="card red-grey-gradient">
+            <div class="card-image-container">
+              <img src="./images/IMG_0117.jpg" />
+            </div>
+            <div class="card-content">
+              <p class="card-title text--medium">
+                Here's the Title of an Awesome Course
+              </p>
+              <div class="card-info">
+                <p class="text--medium">30 Min</p>
+                <p class="card-price text--medium">Free</p>
+              </div>
+            </div>
+          </div>
+          <!--End of card 2-->
+
+          <div class="card red-grey-gradient">
+            <div class="card-image-container">
+              <img src="./images/ui.jpg" />
+            </div>
+            <div class="card-content">
+              <p class="card-title text--medium">
+                Here's the Title of an Awesome Course
+              </p>
+              <div class="card-info">
+                <p class="text--medium">30 Min</p>
+                <p class="card-price text--medium">Free</p>
+              </div>
+            </div>
+          </div>
+          <!--End of card 3-->
+        </section>
+      </div>
     </div>
 
     <script src="js/main.js"></script>

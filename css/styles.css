@@ -48,10 +48,10 @@ body {
 
 /* STRUCTURE */
 .container {
-  /* border: 1px solid red; */
   height: 100vh;
 
   background-color: var(--main-dark);
+  z-index: -100;
 }
 .grid-container {
   display: grid;
@@ -60,7 +60,6 @@ body {
   height: 60%;
 }
 .nav-side-left {
-  /* border: 1px solid blue; */
   width: 60vw;
   height: 100vh;
   position: relative;
@@ -68,6 +67,7 @@ body {
   background-color: var(--main-grey);
 
   transition: all 0.3s ease-out;
+  z-index: 1;
 }
 .nav-control {
   position: relative;
@@ -101,6 +101,10 @@ body {
 }
 .nav-object:hover {
   opacity: 1;
+}
+
+.nav-object a {
+  text-decoration: none;
 }
 
 .nav-active {
@@ -149,4 +153,111 @@ body {
   position: absolute;
   bottom: 10px;
   left: 15px;
+}
+
+/* MAIN BODY */
+
+.main-body {
+  position: absolute;
+  top: 40px;
+  z-index: 0;
+  width: 100vw;
+}
+
+.title {
+  font-weight: 100;
+  margin: 20px;
+}
+
+.cards-2-col {
+  position: inherit;
+  width: 100vw;
+  grid-column: 2 / span 12;
+  display: grid;
+  grid-template-columns: 10px repeat(6, 1fr) 10px;
+  grid-gap: 10px;
+}
+
+.card {
+  grid-column-end: span 4;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--alt-grey);
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  width: 46vw;
+  place-self: center;
+  border-radius: 12px;
+}
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card-image-container {
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px 12px 0px 0px;
+}
+
+.card-image-container img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  margin-bottom: 20px;
+}
+
+.card-info {
+  display: flex;
+  align-self: end;
+  align-items: center;
+}
+
+.card-price {
+  margin-left: auto;
+  padding: 5px 20px;
+  background-color: var(--alt-grey);
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    grid-column-end: span 6;
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .cards-2-col {
+    grid-gap: 20px;
+  }
+  .card {
+    grid-column-end: span 12;
+  }
+}
+
+@media only screen and (max-width: 0px) {
+  .cards-2-col {
+    grid-template-columns: 10px repeat(6, 1fr) 10px;
+    grid-gap: 10px;
+  }
+  .cards {
+    grid-column: 2 / span 6;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+  }
+  .card {
+    grid-column-end: span 6;
+    width: 80vw;
+  }
 }
