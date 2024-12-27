@@ -48,7 +48,7 @@ body {
 
 /* STRUCTURE */
 .container {
-  height: 100vh;
+  /* height: 100vh; */
 
   background-color: var(--main-dark);
   z-index: -100;
@@ -58,6 +58,10 @@ body {
   row-gap: 30px;
 
   height: 60%;
+}
+.nav-container {
+  position: fixed;
+  z-index: 100;
 }
 .nav-side-left {
   width: 60vw;
