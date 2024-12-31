@@ -88,9 +88,8 @@ body {
   font-weight: bolder;
 }
 .nav-control svg {
-  padding-top: 4px;
+  padding-top: 5px;
   width: 30px;
-  fill: var(--text-light);
 }
 .nav-out-js {
   right: 60vw;
